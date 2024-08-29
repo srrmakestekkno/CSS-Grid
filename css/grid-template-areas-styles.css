@@ -1,0 +1,98 @@
+/*  GRID AREAS */
+/* .grid {
+  display: grid;
+
+  grid-template: 100px 100px / 200px auto 150px;
+
+  grid-template-areas:
+    "E . A"
+    "B C A"
+    "B D F";
+}
+
+.grid div:nth-child(1) {
+  grid-area: A;
+}
+
+.grid div:nth-child(2) {
+  grid-area: B;
+}
+
+.grid div:nth-child(3) {
+  grid-area: C;
+}
+
+.grid div:nth-child(4) {
+  grid-area: D;
+}
+
+.grid div:nth-child(5) {
+  grid-area: E;
+}
+
+.grid div:nth-child(6) {
+  grid-area: F;
+} */
+
+/* ********** NAMING COLUMNS ************** */
+/* .grid {
+  display: grid;
+  grid-template: 100px 100px 100px / repeat(12, [small] 20px [large] 40px);
+}
+
+.grid div:nth-child(1) {
+  grid-column: 1 / span 24;
+}
+
+.grid div:nth-child(2) {
+  grid-column: small 1 / large 3;
+}
+
+.grid div:nth-child(3) {
+  grid-column: auto / span 6;
+}
+
+.grid div:nth-child(4) {
+  grid-column: auto / span 6;
+}
+
+.grid div:nth-child(5) {
+  grid-column: auto / span 12;
+}
+.grid div:nth-child(6) {
+  grid-column: auto / span 12;
+} */
+
+/* ******** 1fr UNIT distribute the remaining space **************** */
+/* .grid {
+  display: grid;
+  gap: 10px;
+  grid-template: 100px 100px 100px / 100px 2fr 1fr;
+} */
+
+/*  MINMAX FUNCTION */
+/* set minimum size and max. min and max 1fr, (max 1fr) ->)eans take the remaining size and distribute that equally */
+/* .grid {
+  display: grid;
+  gap: 10px;
+  grid-template: 100px 100px 100px / repeat(6, minmax(100px, 200px));
+} */
+
+/* ****** AUTO-FILL FUNCTION ********** */
+.grid {
+  display: grid;
+  gap: 10px;
+  /* minmax always prefers the maximum size */
+  /* auto-fill tries to fit columns and if overflow, place the column on the next row */
+  /* when auto or 1fr in minmax, it will look at the minimum size  */
+  /* DO NOT use minmax(auto-fill, 1fr) there is no value to work with for the cols */
+  /* grid-template: 100px 100px 100px / repeat(auto-fill, minmax(100px, auto)); */
+}
+
+/* ****** AUTO-FIT FUNCTION ********** */
+.grid {
+  display: grid;
+  /* If there is an empty column or row in the grid container (ex. col 7), it will be collapsed to 0px when using auto-fit */
+  /* when using auto-fit with minmax(...px, 1fr) it will use the min width and the remaining space (1fr) and distribute that space between the columns that are used. */
+  grid-template: 100px 100px 100px / repeat(auto-fit, minmax(100px, 1fr));
+}

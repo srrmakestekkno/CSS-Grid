@@ -1,0 +1,112 @@
+.container {
+  color: red;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-rows: 50px 100px 200px 100px 50px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "image  image  cta    cta"
+    "main   main   main   main"
+    "links  links  links  ads"
+    "footer footer footer footer";
+  grid-gap: 10px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background-color: #263238;
+  grid-area: header;
+}
+
+.teaser-image {
+  background-color: #b0bec5;
+  grid-area: image;
+}
+
+.teaser-cta {
+  background-color: #90a4ae;
+  grid-area: cta;
+}
+
+.main {
+  background-color: #cfd8dc;
+  grid-area: main;
+}
+
+.footer-links {
+  background-color: #455a64;
+  grid-area: links;
+}
+
+.footer-ads {
+  background-color: #455a64;
+  grid-area: ads;
+}
+
+.superfooter {
+  background-color: #263238;
+  grid-area: footer;
+}
+
+.container2 {
+  display: grid;
+  grid-template-rows: repeat(6, 50px);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+}
+
+.container2 div {
+  background-color: grey;
+}
+
+/* Exercise 3 */
+.exercise-3 {
+  width: 500px;
+  display: grid;
+  gap: 10px;
+  /* ===
+       * 1.4) This will generate two columns because
+       * auto-fill prefers a fixed max size, here 200px,
+       * and only two of those fit.
+       * ===
+       */
+  /*width: 500px;*/
+  /*grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 200px));*/
+
+  /* ===
+       * 2.2) This generates 4 columns because there is no
+       * fixed max size so the min size is used
+       * ===
+       */
+  /* grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 1fr)); */
+
+  /* ===
+       * 2.3) This still generates the same 4 columns
+       * because there's not enough space for auto-fill
+       * to create an additional unused column anyway.
+       * Thus, there is nothing to collapse for auto-fit.
+       * ===
+       */
+  /* grid-template: 100px 100px / repeat(auto-fit, minmax(100px, 1fr)); */
+
+  /* ===
+       * 2.4) Due to grid-gap and the column width, at
+       * 540px, auto-fill is able to generate a fifth unused column.
+       * Thus, auto-fit will collapse that to 0px, making the
+       * remaining four columns take up more space.
+       * ===
+       */
+  width: 540px;
+  grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 1fr));
+  justify-items: start;
+}
+
+.exercise-3 div {
+  background-color: #90a4ae;
+}

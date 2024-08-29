@@ -1,0 +1,61 @@
+:root {
+  --item1: #3b8ed3;
+  --item2: #144d7a;
+  --item3: #682f97;
+  --item4: #741c52;
+  --item5: #b3454a;
+  --item6: #eb21ae;
+}
+
+.main {
+  border: 1px solid rebeccapurple;
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  border: 4px solid #000;
+  gap: 10px;
+  grid-template: repeat(2, 100px) / repeat(3, 1fr);
+  background-color: #b6a8a8;
+}
+
+.grid div {
+  text-align: center;
+  color: #fff;
+  padding: 15px;
+}
+
+.grid div:nth-child(1) {
+  background-color: var(--item1);
+  justify-self: center;
+  align-self: center;
+}
+
+.grid div:nth-child(2) {
+  background-color: var(--item2);
+  justify-self: end;
+}
+
+.grid div:nth-child(3) {
+  background-color: var(--item3);
+  justify-self: stretch;
+  align-self: center;
+}
+
+.grid div:nth-child(4) {
+  background-color: var(--item4);
+  align-self: start;
+  justify-self: end;
+}
+
+.grid div:nth-child(5) {
+  background-color: var(--item5);
+  justify-self: center;
+  align-self: end;
+}
+
+.grid div:nth-child(6) {
+  background-color: var(--item6);
+  justify-self: center;
+}
