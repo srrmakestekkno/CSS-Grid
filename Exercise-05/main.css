@@ -1,0 +1,86 @@
+/* EXERCISE 1 */
+.grid {
+  display: grid;
+  grid-template: repeat(5, 50px) / repeat(5, 50px);
+}
+
+.top {
+  background-color: rgba(150, 0, 0, 0.8);
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 3;
+  z-index: 3;
+}
+
+.bottom {
+  background-color: rgba(0, 150, 0, 0.87);
+  grid-row: 3 / span 3;
+  grid-column: 3 / span 3;
+  z-index: 2;
+}
+
+.middle {
+  background-color: rgb(0, 0, 150, 0.7);
+  grid-row: 2 / span 3;
+  grid-column: 2 / span 3;
+  z-index: 1;
+}
+
+/* EXERCISE 2 */
+.grid2 {
+  background-color: #bb83af;
+  display: grid;
+  grid-template: repeat(3, 300px) / repeat(4, 1fr);
+  gap: 10px;
+}
+.grid2 div {
+  background-color: #be37a1;
+}
+.subgrid .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(26, 25, 25);
+  color: white;
+}
+
+.subgrid {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 5px;
+}
+
+.horizontal {
+  display: grid;
+  gap: 5px;
+}
+
+.vertical {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  gap: 5px;
+}
+
+/* EXERCISE 3 */
+.gallery {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 30px;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.image {
+  position: relative;
+}
+
+.gallery span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  padding: 10px;
+}

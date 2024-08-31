@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  gap: 10px;
+  grid: 200px 200px / 1fr 1fr 1fr 1fr;
+  position: relative;
+}
+
+/* Absolute positioning 1; in a grid */
+.highlighter {
+  position: absolute;
+
+  /* Take up the space it has available in the grid when using 100%*/
+  width: calc(100% + 10px); /* Calculate the width of 1005 + 10px */
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  grid-row: 2;
+  grid-column: 2 / span 2;
+  background-color: rgba(200, 250, 50, 0.3);
+}

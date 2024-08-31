@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  /* 1fr each of which take up the same space and all togehter take up all the space there is */
+  grid: 200px 200px / 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.three {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  background-color: #000050b3;
+  z-index: 1;
+}
+
+.four {
+  grid-row: 1;
+  grid-column: 2 / span 2;
+  background-color: #500000b3;
+}

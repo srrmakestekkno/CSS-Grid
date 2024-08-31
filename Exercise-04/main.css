@@ -1,0 +1,39 @@
+:root {
+  --item1: #bcd0e0;
+  --item2: #144d7a;
+  --item3: #682f97;
+  --item4: #741c52;
+  --item5: #b3454a;
+  --item6: #eb21ae;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.grid div {
+  border: 1px solid var(--item6);
+}
+
+.grid {
+  display: grid;
+  gap: 5px;
+  grid: none / auto-flow 100px;
+}
+
+.grid2 div img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid2 {
+  width: 930px;
+  margin: 0 auto;
+  background-color: var(--item5);
+  display: grid;
+  gap: 10px;
+  /* All other rows are implicit generated with 200px */
+  grid-template: 200px / repeat(3, 300px);
+  grid-auto-rows: 200px;
+}
