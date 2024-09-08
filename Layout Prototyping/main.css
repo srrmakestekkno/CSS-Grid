@@ -1,0 +1,62 @@
+body {
+  background-color: palevioletred;
+}
+.grid {
+  min-height: 100vh;
+  display: grid;
+  grid: 100px auto 100px / repeat(8, 1fr);
+  gap: 12px;
+  grid-template-areas:
+    "h h h h  h h h h"
+    "s c c c  c c c ."
+    "s f f f  f f f f";
+}
+
+.header {
+  grid-area: h;
+  border: 1px solid #fff;
+}
+
+.content {
+  display: grid;
+  grid: auto 1fr auto / repeat(8, 1fr);
+  gap: 12px;
+  grid-template-areas:
+    "ih ih ih ih  ih ih ih ih"
+    "is ic ic ic  ic ic ic ic"
+    "is if if if  if if if if";
+  grid-area: c;
+}
+
+.innerHeader {
+  grid-area: ih;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContent {
+  grid-area: ic;
+  border: 2px solid black;
+}
+
+.innerSidebar {
+  grid-area: is;
+  border: 2px solid black;
+}
+
+.innerFooter {
+  grid-area: if;
+  border: 2px solid black;
+}
+
+.sidebar {
+  grid-area: s;
+  border: 1px solid #fff;
+}
+
+.footer {
+  grid-area: f;
+  border: 1px solid #fff;
+}
